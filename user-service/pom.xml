@@ -2,15 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.dailycodebuffer</groupId>
 	<artifactId>user-service</artifactId>
 	<version>0.0.1</version>
+
 	<name>user-service</name>
 	<description>user-service</description>
 
@@ -81,6 +84,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -88,8 +92,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
+			<!-- Plugin that allows us to push to DockerHub -->
 			<plugin>
-				<groupId>com.spotify</groupId>
+				<groupId>com.spotify</groupId> <!-- The Spotify Dockerfile Maven" Plugin is a useful tool for building and deploying Docker images as part of a Maven" build process, and it is widely used in the Java ecosystem. -->
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.13</version>
 				<executions>
@@ -102,8 +107,8 @@
 					</execution>
 				</executions>
 				<configuration>
-					<repository>dailycodebuffer/user-service</repository>
-					<tag>${project.version}</tag>
+					<repository>dailycodebuffer/user-service</repository> <!-- DockerHub Repository Name -->
+					<tag>${project.version}</tag> <!-- Docker Image Tag Version -->
 					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 				</configuration>
 				<dependencies>
