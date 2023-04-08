@@ -21,6 +21,20 @@ The various services in the sample application already include all required Inst
 
 To see the application performance results in the Instana dashboard, you will first need an Instana account. Don't worry a [trial account](https://instana.com/trial?utm_source=github&utm_medium=robot_shop) is free.
 
+## Services Explanation
+* Cart: This service is responsible for managing a user's shopping cart, including adding, removing, and updating items.
+* Catalogue: This service provides a list of products and their details, such as name, description, price, and image. It also allows for searching and filtering the products.
+* Dispatch: This service handles the logistics of order fulfillment, including shipping, tracking, and updating the status of the order.
+* Load-Gen: This service generates a high volume of requests to the other services in order to test their performance and scalability.
+* Mongo: This service provides a database for storing non-relational data.
+* MySQL: This service provides a relational database for storing data that is structured in tables.
+* Payment: This service handles the payment process, including authorization, charging, and refunding.
+* Ratings: This service allows users to rate and review products, and provides an average rating for each product.
+* Redis: Used as another data store (not a caching layer in this case) specifically in User and Cart services.
+* Shipping: This service provides information on shipping rates and options, and handles the integration with shipping carriers.
+* User: This service manages user accounts, including authentication, authorization, and profile information.
+* Web (Frontend): This service provides the web interface for users to interact with the other services, including browsing products, adding items to the cart, and checking out.
+
 ## Build from Source
 To optionally build from source (you will need a newish version of Docker to do this) use Docker Compose. Optionally edit the `.env` file to specify an alternative image registry and version tag; see the official [documentation](https://docs.docker.com/compose/env-file/) for more information.
 
